@@ -1,0 +1,6 @@
+you will need pocketbase installed, and the node module installed
+run the database
+
+*Write Must happen first*
+then read, or add can be used
+edit and delete must only be used for data that actually exists
