@@ -26,6 +26,7 @@ import {
   ListBulletIcon,
   ShoppingCartIcon,
   ChatBubbleLeftRightIcon,
+  MegaphoneIcon,
 
 } from '@heroicons/react/24/outline'
 import { AcademicCapIcon } from '@heroicons/react/24/solid'
@@ -72,29 +73,29 @@ const solutions = [
   {
     name: 'GPA Calculator',
     description: 'A GPA calculater embed inside of the functions.',
-    href: '/dashboard/gpa',
+    href: '/',
     icon: CalculatorIcon,
   },
   { name: 'Grader', 
     description: "The grader shows you a hyper accurate grade breakdown for each class.", 
-    href: '/dashboard/grader', 
+    href: '/', 
     icon: RectangleGroupIcon },
   {
     name: 'Radar scale',
     description: "The radar scale will show you what you are good at and your strengths and weaknesses.",
-    href: '/dashboard/radar',
+    href: '/',
     icon: ChartPieIcon,
   },
   {
     name: 'Overall grade',
     description: 'Shows you all your grades at a glace.',
-    href: '/dashboard',
+    href: '/',
     icon: ListBulletIcon,
   },
   {
     name: 'Homework Help',
     description: 'We use an AI api to come up with useful answers for all questions.',
-    href: '/dashboard/homework-help',
+    href: '/',
     icon: ChatBubbleLeftRightIcon,
   },
 ]
@@ -117,6 +118,23 @@ export default function RootLayout({
   return (
     <html>
       <body>
+      <div className="bg-indigo-600">
+        <div className="mx-auto max-w-7xl py-3 px-3 sm:px-6 lg:px-8">
+          <div className="flex flex-wrap items-center justify-between">
+            <div className="flex w-0 flex-1 items-center">
+              <span className="flex rounded-lg bg-indigo-800 p-2">
+                <MegaphoneIcon className="h-6 w-6 text-white" aria-hidden="true" />
+              </span>
+              <p className="ml-3 truncate font-medium text-white">
+                <span className="md:hidden">I was sent to the ER</span>
+                <span className="hidden md:inline">I was sent to the ER so thats why some functionality doesn't work.</span>
+              </p>
+            </div>
+            <div className="order-3 mt-2 w-full flex-shrink-0 sm:order-2 sm:mt-0 sm:w-auto">
+            </div>
+          </div>
+        </div>
+      </div>
       <div className="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]">
           <svg
             className="relative left-[calc(50%-11rem)] -z-10 h-[21.1875rem] max-w-none -translate-x-1/2 rotate-[30deg] sm:left-[calc(50%-30rem)] sm:h-[42.375rem]"
@@ -307,19 +325,20 @@ export default function RootLayout({
                     <a href="/contact" className="text-base font-medium text-gray-900 hover:text-gray-700">
                       Contact Us
                     </a>
-                    <a href="/learn-more" className="text-base font-medium text-gray-900 hover:text-gray-700">
+                    
+                    <a href="/" className="text-base font-medium text-gray-900 hover:text-gray-700">
                       Learn More
                     </a>
                   </div>
                   <div>
                     <a
-                      href="/sign-up"
+                      href="/"
                       className="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700">
                       Sign up
                     </a>
                     <p className="mt-6 text-center text-base font-medium text-gray-500">
                       Existing customer?{' '}
-                      <a href="/sign-in" className="text-indigo-600 hover:text-indigo-500">
+                      <a href="/" className="text-indigo-600 hover:text-indigo-500">
                         Sign in
                       </a>
                     </p>
