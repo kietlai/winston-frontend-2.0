@@ -2,7 +2,8 @@
 import './globals.css'
 import Image from 'next/image';
 
-import { Fragment } from 'react'
+
+import { Fragment, SVGProps } from 'react'
 import { Popover, Transition } from '@headlessui/react'
 import {
   ArrowPathIcon,
@@ -23,6 +24,8 @@ import {
   CalculatorIcon,
   BanknotesIcon,
   ListBulletIcon,
+  ShoppingCartIcon,
+  ChatBubbleLeftRightIcon,
 
 } from '@heroicons/react/24/outline'
 import { AcademicCapIcon } from '@heroicons/react/24/solid'
@@ -30,31 +33,16 @@ import { ChevronDownIcon } from '@heroicons/react/20/solid'
 
 const navigation = {
   main: [
-    { name: 'About', href: '#' },
-    { name: 'Blog', href: '#' },
-    { name: 'Jobs', href: '#' },
-    { name: 'Press', href: '#' },
-    { name: 'Accessibility', href: '#' },
-    { name: 'Partners', href: '#' },
+    { name: 'About Us', href: '/about-us'},
+    { name: 'Contact', href: '/contact' },
+    { name: 'Pricing', href: '/pricing' },
+    { name: 'Learn More', href: 'learn-more'}
   ],
   social: [
     {
-      name: 'Facebook',
-      href: '#',
-      icon: (props) => (
-        <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
-          <path
-            fillRule="evenodd"
-            d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
-            clipRule="evenodd"
-          />
-        </svg>
-      ),
-    },
-    {
       name: 'Instagram',
       href: '#',
-      icon: (props) => (
+      icon: (props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
             fillRule="evenodd"
@@ -65,35 +53,13 @@ const navigation = {
       ),
     },
     {
-      name: 'Twitter',
-      href: '#',
-      icon: (props) => (
-        <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
-          <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
-        </svg>
-      ),
-    },
-    {
       name: 'GitHub',
       href: '#',
-      icon: (props) => (
+      icon: (props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
             fillRule="evenodd"
             d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
-            clipRule="evenodd"
-          />
-        </svg>
-      ),
-    },
-    {
-      name: 'Dribbble',
-      href: '#',
-      icon: (props) => (
-        <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
-          <path
-            fillRule="evenodd"
-            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c5.51 0 10-4.48 10-10S17.51 2 12 2zm6.605 4.61a8.502 8.502 0 011.93 5.314c-.281-.054-3.101-.629-5.943-.271-.065-.141-.12-.293-.184-.445a25.416 25.416 0 00-.564-1.236c3.145-1.28 4.577-3.124 4.761-3.362zM12 3.475c2.17 0 4.154.813 5.662 2.148-.152.216-1.443 1.941-4.48 3.08-1.399-2.57-2.95-4.675-3.189-5A8.687 8.687 0 0112 3.475zm-3.633.803a53.896 53.896 0 013.167 4.935c-3.992 1.063-7.517 1.04-7.896 1.04a8.581 8.581 0 014.729-5.975zM3.453 12.01v-.26c.37.01 4.512.065 8.775-1.215.25.477.477.965.694 1.453-.109.033-.228.065-.336.098-4.404 1.42-6.747 5.303-6.942 5.629a8.522 8.522 0 01-2.19-5.705zM12 20.547a8.482 8.482 0 01-5.239-1.8c.152-.315 1.888-3.656 6.703-5.337.022-.01.033-.01.054-.022a35.318 35.318 0 011.823 6.475 8.4 8.4 0 01-3.341.684zm4.761-1.465c-.086-.52-.542-3.015-1.659-6.084 2.679-.423 5.022.271 5.314.369a8.468 8.468 0 01-3.655 5.715z"
             clipRule="evenodd"
           />
         </svg>
@@ -104,66 +70,41 @@ const navigation = {
 
 const solutions = [
   {
-    name: 'Class Grades',
-    description: 'Add classes to be calculated',
-    href: '#',
-    icon: ChartBarIcon,
-  },
-  {
     name: 'GPA Calculator',
     description: 'A GPA calculater embed inside of the functions.',
-    href: '#',
+    href: '/dashboard/gpa',
     icon: CalculatorIcon,
   },
   { name: 'Grader', 
     description: "The grader shows you a hyper accurate grade breakdown for each class.", 
-    href: '#', 
+    href: '/dashboard/grader', 
     icon: RectangleGroupIcon },
   {
     name: 'Radar scale',
     description: "The radar scale will show you what you are good at and your strengths and weaknesses.",
-    href: '#',
+    href: '/dashboard/radar',
     icon: ChartPieIcon,
   },
   {
     name: 'Overall grade',
     description: 'Shows you all your grades at a glace.',
-    href: '#',
+    href: '/dashboard',
     icon: ListBulletIcon,
+  },
+  {
+    name: 'Homework Help',
+    description: 'We use an AI api to come up with useful answers for all questions.',
+    href: '/dashboard/homework-help',
+    icon: ChatBubbleLeftRightIcon,
   },
 ]
 const callsToAction = [
   { name: 'Learn More', href: '/learn-more', icon: PlayIcon },
-  { name: 'Contact Sales', href: '#', icon: PhoneIcon },
-]
-const resources = [
-  {
-    name: 'Help Center',
-    description: 'Get all of your questions answered in our forums or contact support.',
-    href: '#',
-    icon: LifebuoyIcon,
-  },
-  {
-    name: 'Guides',
-    description: 'Learn how to maximize our platform to get the most out of it.',
-    href: '#',
-    icon: BookmarkSquareIcon,
-  },
-  {
-    name: 'Events',
-    description: 'See what meet-ups and other events we might be planning near you.',
-    href: '#',
-    icon: CalendarIcon,
-  },
-  { name: 'Security', description: 'Understand how we take your privacy seriously.', href: '#', icon: ShieldCheckIcon },
-]
-const recentPosts = [
-  { id: 1, name: 'Boost your conversion rate', href: '#' },
-  { id: 2, name: 'How to use search engine optimization to drive traffic to your site', href: '#' },
-  { id: 3, name: 'Improve your customer experience', href: '#' },
+  { name: 'Contact', href: '/contact', icon: PhoneIcon },
+  { name: 'Pricing', href: '/pricing', icon: ShoppingCartIcon },
 ]
 
-function classNames(...classes) {
+function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ')
 }
 
@@ -203,17 +144,17 @@ export default function RootLayout({
             </defs>
           </svg>
         </div>
-        <Popover className="relative bg-transparent backdrop-blur-3xl">
+        <Popover className="relative bg-transparent backdrop-blur-3xl z-40">
           <div className="mx-auto max-w-7xl px-4 sm:px-6">
             <div className="flex items-center justify-between py-6 md:justify-start md:space-x-10 border-b-3 border-gray-300">
               <div className="flex justify-start lg:w-0 lg:flex-1">
-                <a href="#">
+                <a href="/">
                   <span className="sr-only">Winston</span>
-                           
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 22 22" strokeWidth={1.5} stroke="#4f46e5" className="h-8 w-auto">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#4f46e5" className="h-8 w-auto">
+                    <path d="M11.7 2.805a.75.75 0 01.6 0A60.65 60.65 0 0122.83 8.72a.75.75 0 01-.231 1.337 49.949 49.949 0 00-9.902 3.912l-.003.002-.34.18a.75.75 0 01-.707 0A50.009 50.009 0 007.5 12.174v-.224c0-.131.067-.248.172-.311a54.614 54.614 0 014.653-2.52.75.75 0 00-.65-1.352 56.129 56.129 0 00-4.78 2.589 1.858 1.858 0 00-.859 1.228 49.803 49.803 0 00-4.634-1.527.75.75 0 01-.231-1.337A60.653 60.653 0 0111.7 2.805z" />
+                    <path d="M13.06 15.473a48.45 48.45 0 017.666-3.282c.134 1.414.22 2.843.255 4.285a.75.75 0 01-.46.71 47.878 47.878 0 00-8.105 4.342.75.75 0 01-.832 0 47.877 47.877 0 00-8.104-4.342.75.75 0 01-.461-.71c.035-1.442.121-2.87.255-4.286A48.4 48.4 0 016 13.18v1.27a1.5 1.5 0 00-.14 2.508c-.09.38-.222.753-.397 1.11.452.213.901.434 1.346.661a6.729 6.729 0 00.551-1.608 1.5 1.5 0 00.14-2.67v-.645a48.549 48.549 0 013.44 1.668 2.25 2.25 0 002.12 0z" />
+                    <path d="M4.462 19.462c.42-.419.753-.89 1-1.394.453.213.902.434 1.347.661a6.743 6.743 0 01-1.286 1.794.75.75 0 11-1.06-1.06z" />
                   </svg>
-
                 </a>
               </div>
               <div className="-my-2 -mr-2 md:hidden">
@@ -294,85 +235,19 @@ export default function RootLayout({
                 <a href="/about-us" className="text-base font-medium text-gray-500 hover:text-gray-900">
                   About Us
                 </a>
-
-                <Popover className="relative">
-                  {({ open }) => (
-                    <>
-                      <Popover.Button
-                        className={classNames(
-                          open ? 'text-gray-900' : 'text-gray-500',
-                          'group inline-flex items-center rounded-md bg-transparent text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2'
-                        )}
-                      >
-                        <span>More</span>
-                        <ChevronDownIcon
-                          className={classNames(
-                            open ? 'text-gray-600' : 'text-gray-400',
-                            'ml-2 h-5 w-5 group-hover:text-gray-500'
-                          )}
-                          aria-hidden="true"
-                        />
-                      </Popover.Button>
-
-                      <Transition
-                        as={Fragment}
-                        enter="transition ease-out duration-200"
-                        enterFrom="opacity-0 translate-y-1"
-                        enterTo="opacity-100 translate-y-0"
-                        leave="transition ease-in duration-150"
-                        leaveFrom="opacity-100 translate-y-0"
-                        leaveTo="opacity-0 translate-y-1"
-                      >
-                        <Popover.Panel className="absolute left-1/2 z-10 mt-3 w-screen max-w-md -translate-x-1/2 transform px-2 sm:px-0">
-                          <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
-                            <div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
-                              {resources.map((item) => (
-                                <a
-                                  key={item.name}
-                                  href={item.href}
-                                  className="-m-3 flex items-start rounded-lg p-3 hover:bg-gray-50"
-                                >
-                                  <item.icon className="h-6 w-6 flex-shrink-0 text-indigo-600" aria-hidden="true" />
-                                  <div className="ml-4">
-                                    <p className="text-base font-medium text-gray-900">{item.name}</p>
-                                    <p className="mt-1 text-sm text-gray-500">{item.description}</p>
-                                  </div>
-                                </a>
-                              ))}
-                            </div>
-                            <div className="bg-gray-50 px-5 py-5 sm:px-8 sm:py-8">
-                              <div>
-                                <h3 className="text-base font-medium text-gray-500">Recent Posts</h3>
-                                <ul role="list" className="mt-4 space-y-4">
-                                  {recentPosts.map((post) => (
-                                    <li key={post.id} className="truncate text-base">
-                                      <a href={post.href} className="font-medium text-gray-900 hover:text-gray-700">
-                                        {post.name}
-                                      </a>
-                                    </li>
-                                  ))}
-                                </ul>
-                              </div>
-                              <div className="mt-5 text-sm">
-                                <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500">
-                                  View all posts
-                                  <span aria-hidden="true"> &rarr;</span>
-                                </a>
-                              </div>
-                            </div>
-                          </div>
-                        </Popover.Panel>
-                      </Transition>
-                    </>
-                  )}
-                </Popover>
+                <a href="/pricing" className="text-base font-medium text-gray-500 hover:text-gray-900">
+                  Pricing
+                </a>
+                <a href="/learn-more" className="text-base font-medium text-gray-500 hover:text-gray-900">
+                  Learn More
+                </a>
               </Popover.Group>
               <div className="hidden items-center justify-end md:flex md:flex-1 lg:w-0">
-                <a href="#" className="whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900">
+                <a href="/sign-in" className="whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900">
                   Sign in
                 </a>
                 <a
-                  href="#"
+                  href="/sign-up"
                   className="ml-8 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
                 >
                   Sign up
@@ -395,11 +270,11 @@ export default function RootLayout({
                 <div className="px-5 pt-5 pb-6">
                   <div className="flex items-center justify-between">
                     <div>
-                      <img
-                        className="h-8 w-auto"
-                        src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                        alt="Your Company"
-                      />
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#4f46e5" className="h-8 w-auto">
+                        <path d="M11.7 2.805a.75.75 0 01.6 0A60.65 60.65 0 0122.83 8.72a.75.75 0 01-.231 1.337 49.949 49.949 0 00-9.902 3.912l-.003.002-.34.18a.75.75 0 01-.707 0A50.009 50.009 0 007.5 12.174v-.224c0-.131.067-.248.172-.311a54.614 54.614 0 014.653-2.52.75.75 0 00-.65-1.352 56.129 56.129 0 00-4.78 2.589 1.858 1.858 0 00-.859 1.228 49.803 49.803 0 00-4.634-1.527.75.75 0 01-.231-1.337A60.653 60.653 0 0111.7 2.805z" />
+                        <path d="M13.06 15.473a48.45 48.45 0 017.666-3.282c.134 1.414.22 2.843.255 4.285a.75.75 0 01-.46.71 47.878 47.878 0 00-8.105 4.342.75.75 0 01-.832 0 47.877 47.877 0 00-8.104-4.342.75.75 0 01-.461-.71c.035-1.442.121-2.87.255-4.286A48.4 48.4 0 016 13.18v1.27a1.5 1.5 0 00-.14 2.508c-.09.38-.222.753-.397 1.11.452.213.901.434 1.346.661a6.729 6.729 0 00.551-1.608 1.5 1.5 0 00.14-2.67v-.645a48.549 48.549 0 013.44 1.668 2.25 2.25 0 002.12 0z" />
+                        <path d="M4.462 19.462c.42-.419.753-.89 1-1.394.453.213.902.434 1.347.661a6.743 6.743 0 01-1.286 1.794.75.75 0 11-1.06-1.06z" />
+                      </svg>
                     </div>
                     <div className="-mr-2">
                       <Popover.Button className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
@@ -425,33 +300,26 @@ export default function RootLayout({
                 </div>
                 <div className="space-y-6 py-6 px-5">
                   <div className="grid grid-cols-2 gap-y-4 gap-x-8">
-                    <a href="#" className="text-base font-medium text-gray-900 hover:text-gray-700">
+                    <a href="/pricing" className="text-base font-medium text-gray-900 hover:text-gray-700">
                       Pricing
                     </a>
 
-                    <a href="#" className="text-base font-medium text-gray-900 hover:text-gray-700">
-                      Docs
+                    <a href="/contact" className="text-base font-medium text-gray-900 hover:text-gray-700">
+                      Contact Us
                     </a>
-                    {resources.map((item) => (
-                      <a
-                        key={item.name}
-                        href={item.href}
-                        className="text-base font-medium text-gray-900 hover:text-gray-700"
-                      >
-                        {item.name}
-                      </a>
-                    ))}
+                    <a href="/learn-more" className="text-base font-medium text-gray-900 hover:text-gray-700">
+                      Learn More
+                    </a>
                   </div>
                   <div>
                     <a
-                      href="#"
-                      className="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
-                    >
+                      href="/sign-up"
+                      className="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700">
                       Sign up
                     </a>
                     <p className="mt-6 text-center text-base font-medium text-gray-500">
                       Existing customer?{' '}
-                      <a href="#" className="text-indigo-600 hover:text-indigo-500">
+                      <a href="/sign-in" className="text-indigo-600 hover:text-indigo-500">
                         Sign in
                       </a>
                     </p>
@@ -461,10 +329,38 @@ export default function RootLayout({
             </Popover.Panel>
           </Transition>
         </Popover>
-        <div >
+
+        <div className="z-10">
           {children}
         </div>
-        <footer className="bg-transparent backdrop-blur-3x absolute bottom-0 w-full">
+        <div className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]">
+            <svg
+              className="relative left-[calc(50%+3rem)] h-[21.1875rem] max-w-none -translate-x-1/2 sm:left-[calc(50%+36rem)] sm:h-[42.375rem]"
+              viewBox="0 0 1155 678"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill="url(#ecb5b0c9-546c-4772-8c71-4d3f06d544bc)"
+                fillOpacity=".3"
+                d="M317.219 518.975L203.852 678 0 438.341l317.219 80.634 204.172-286.402c1.307 132.337 45.083 346.658 209.733 145.248C936.936 126.058 882.053-94.234 1031.02 41.331c119.18 108.451 130.68 295.337 121.53 375.223L855 299l21.173 362.054-558.954-142.079z"
+              />
+              <defs>
+                <linearGradient
+                  id="ecb5b0c9-546c-4772-8c71-4d3f06d544bc"
+                  x1="1155.49"
+                  x2="-78.208"
+                  y1=".177"
+                  y2="474.645"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stopColor="#9089FC" />
+                  <stop offset={1} stopColor="#FF80B5" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+        <footer className="bg-transparent backdrop-blur-3x relative bottom-0 w-full">
           <div className="mx-auto max-w-7xl overflow-hidden py-12 px-4 sm:px-6 lg:px-8">
             <nav className="-mx-5 -my-2 flex flex-wrap justify-center" aria-label="Footer">
               {navigation.main.map((item) => (
@@ -483,7 +379,7 @@ export default function RootLayout({
                 </a>
               ))}
             </div>
-            <p className="mt-8 text-center text-base text-gray-400">&copy; 2020 Your Company, Inc. All rights reserved.</p>
+            <p className="mt-8 text-center text-base text-gray-400">&copy; 2022 Winston Edu, Inc. All rights reserved.</p>
           </div>
         </footer>
       </body>
