@@ -1,7 +1,7 @@
-import { EnvelopeIcon, PhoneIcon } from '@heroicons/react/24/outline'
+import { EnvelopeIcon, PhoneIcon } from "@heroicons/react/24/outline";
 
 export default function Page() {
-  return(
+  return (
     <main>
       <div className="bg-transparent">
         <div className="mx-auto max-w-7xl py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
@@ -11,7 +11,8 @@ export default function Page() {
               Let us get some feedback.
             </p>
             <p className="mx-auto mt-5 max-w-xl text-xl text-gray-500">
-              Your feedback is always appreciated for us to better Winston. We are always working to make Winston the best it can be.
+              Your feedback is always appreciated for us to better Winston. We
+              are always working to make Winston the best it can be.
             </p>
           </div>
         </div>
@@ -20,10 +21,14 @@ export default function Page() {
         <div className="mx-auto max-w-7xl py-16 px-4 sm:px-6 lg:py-24 lg:px-8">
           <div className="divide-y-2 divide-gray-200">
             <div className="lg:grid lg:grid-cols-3 lg:gap-8">
-              <h2 className="text-2xl font-bold text-gray-900 sm:text-3xl sm:tracking-tight">Get in touch</h2>
+              <h2 className="text-2xl font-bold text-gray-900 sm:text-3xl sm:tracking-tight">
+                Get in touch
+              </h2>
               <div className="mt-8 grid grid-cols-1 gap-12 sm:grid-cols-2 sm:gap-x-8 sm:gap-y-12 lg:col-span-2 lg:mt-0">
                 <div>
-                  <h3 className="text-lg font-medium leading-6 text-gray-900">Feedback</h3>
+                  <h3 className="text-lg font-medium leading-6 text-gray-900">
+                    Feedback
+                  </h3>
                   <dl className="mt-2 text-base text-gray-500">
                     <div>
                       <dt className="sr-only">Email</dt>
@@ -36,7 +41,9 @@ export default function Page() {
                   </dl>
                 </div>
                 <div>
-                  <h3 className="text-lg font-medium leading-6 text-gray-900">Support</h3>
+                  <h3 className="text-lg font-medium leading-6 text-gray-900">
+                    Support
+                  </h3>
                   <dl className="mt-2 text-base text-gray-500">
                     <div>
                       <dt className="sr-only">Email</dt>
@@ -51,10 +58,14 @@ export default function Page() {
               </div>
             </div>
             <div className="mt-16 pt-16 lg:grid lg:grid-cols-3 lg:gap-8">
-              <h2 className="text-2xl font-bold text-gray-900 sm:text-3xl sm:tracking-tight">Locations</h2>
+              <h2 className="text-2xl font-bold text-gray-900 sm:text-3xl sm:tracking-tight">
+                Locations
+              </h2>
               <div className="mt-8 grid grid-cols-1 gap-12 sm:grid-cols-2 sm:gap-x-8 sm:gap-y-12 lg:col-span-2 lg:mt-0">
                 <div>
-                  <h3 className="text-lg font-medium leading-6 text-gray-900">Parkville</h3>
+                  <h3 className="text-lg font-medium leading-6 text-gray-900">
+                    Parkville
+                  </h3>
                   <div className="mt-2 text-base text-gray-500">
                     <p>2600 Putty Hill Avenue</p>
                     <p className="mt-1">Parkville, MD 21234</p>

@@ -1,10 +1,9 @@
-'use client';
-import './globals.css'
-import Image from 'next/image';
+"use client";
+import "./globals.css";
+import Image from "next/image";
 
-
-import { Fragment, SVGProps } from 'react'
-import { Popover, Transition } from '@headlessui/react'
+import { Fragment, SVGProps } from "react";
+import { Popover, Transition } from "@headlessui/react";
 import {
   ArrowPathIcon,
   Bars3Icon,
@@ -27,22 +26,21 @@ import {
   ShoppingCartIcon,
   ChatBubbleLeftRightIcon,
   MegaphoneIcon,
-
-} from '@heroicons/react/24/outline'
-import { AcademicCapIcon } from '@heroicons/react/24/solid'
-import { ChevronDownIcon } from '@heroicons/react/20/solid'
+} from "@heroicons/react/24/outline";
+import { AcademicCapIcon } from "@heroicons/react/24/solid";
+import { ChevronDownIcon } from "@heroicons/react/20/solid";
 
 const navigation = {
   main: [
-    { name: 'About Us', href: '/about-us'},
-    { name: 'Contact', href: '/contact' },
-    { name: 'Pricing', href: '/pricing' },
-    { name: 'Learn More', href: 'learn-more'}
+    { name: "About Us", href: "/about-us" },
+    { name: "Contact", href: "/contact" },
+    { name: "Pricing", href: "/pricing" },
+    { name: "Learn More", href: "learn-more" },
   ],
   social: [
     {
-      name: 'Instagram',
-      href: '#',
+      name: "Instagram",
+      href: "#",
       icon: (props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
@@ -54,8 +52,8 @@ const navigation = {
       ),
     },
     {
-      name: 'GitHub',
-      href: '#',
+      name: "GitHub",
+      href: "#",
       icon: (props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
@@ -67,48 +65,52 @@ const navigation = {
       ),
     },
   ],
-}
+};
 
 const solutions = [
   {
-    name: 'GPA Calculator',
-    description: 'A GPA calculater embed inside of the functions.',
-    href: '/',
+    name: "GPA Calculator",
+    description: "A GPA calculater embed inside of the functions.",
+    href: "/",
     icon: CalculatorIcon,
   },
-  { name: 'Grader', 
-    description: "The grader shows you a hyper accurate grade breakdown for each class.", 
-    href: '/', 
-    icon: RectangleGroupIcon },
   {
-    name: 'Radar scale',
-    description: "The radar scale will show you what you are good at and your strengths and weaknesses.",
-    href: '/',
+    name: "Grader",
+    description:
+      "The grader shows you a hyper accurate grade breakdown for each class.",
+    href: "/",
+    icon: RectangleGroupIcon,
+  },
+  {
+    name: "Radar scale",
+    description:
+      "The radar scale will show you what you are good at and your strengths and weaknesses.",
+    href: "/",
     icon: ChartPieIcon,
   },
   {
-    name: 'Overall grade',
-    description: 'Shows you all your grades at a glace.',
-    href: '/',
+    name: "Overall grade",
+    description: "Shows you all your grades at a glace.",
+    href: "/",
     icon: ListBulletIcon,
   },
   {
-    name: 'Homework Help',
-    description: 'We use an AI api to come up with useful answers for all questions.',
-    href: '/',
+    name: "Homework Help",
+    description:
+      "We use an AI api to come up with useful answers for all questions.",
+    href: "/",
     icon: ChatBubbleLeftRightIcon,
   },
-]
+];
 const callsToAction = [
-  { name: 'Learn More', href: '/learn-more', icon: PlayIcon },
-  { name: 'Contact', href: '/contact', icon: PhoneIcon },
-  { name: 'Pricing', href: '/pricing', icon: ShoppingCartIcon },
-]
+  { name: "Learn More", href: "/learn-more", icon: PlayIcon },
+  { name: "Contact", href: "/contact", icon: PhoneIcon },
+  { name: "Pricing", href: "/pricing", icon: ShoppingCartIcon },
+];
 
 function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(' ')
+  return classes.filter(Boolean).join(" ");
 }
-
 
 export default function RootLayout({
   children,
@@ -118,24 +120,29 @@ export default function RootLayout({
   return (
     <html>
       <body>
-      <div className="bg-indigo-600">
-        <div className="mx-auto max-w-7xl py-3 px-3 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap items-center justify-between">
-            <div className="flex w-0 flex-1 items-center">
-              <span className="flex rounded-lg bg-indigo-800 p-2">
-                <MegaphoneIcon className="h-6 w-6 text-white" aria-hidden="true" />
-              </span>
-              <p className="ml-3 truncate font-medium text-white">
-                <span className="md:hidden">I was sent to the ER</span>
-                <span className="hidden md:inline">I was sent to the ER so thats why some functionality doesn't work.</span>
-              </p>
-            </div>
-            <div className="order-3 mt-2 w-full flex-shrink-0 sm:order-2 sm:mt-0 sm:w-auto">
+        <div className="bg-indigo-600">
+          <div className="mx-auto max-w-7xl py-3 px-3 sm:px-6 lg:px-8">
+            <div className="flex flex-wrap items-center justify-between">
+              <div className="flex w-0 flex-1 items-center">
+                <span className="flex rounded-lg bg-indigo-800 p-2">
+                  <MegaphoneIcon
+                    className="h-6 w-6 text-white"
+                    aria-hidden="true"
+                  />
+                </span>
+                <p className="ml-3 truncate font-medium text-white">
+                  <span className="md:hidden">I was sent to the ER</span>
+                  <span className="hidden md:inline">
+                    I was sent to the ER so thats why some functionality doesn't
+                    work.
+                  </span>
+                </p>
+              </div>
+              <div className="order-3 mt-2 w-full flex-shrink-0 sm:order-2 sm:mt-0 sm:w-auto"></div>
             </div>
           </div>
         </div>
-      </div>
-      <div className="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]">
+        <div className="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]">
           <svg
             className="relative left-[calc(50%-11rem)] -z-10 h-[21.1875rem] max-w-none -translate-x-1/2 rotate-[30deg] sm:left-[calc(50%-30rem)] sm:h-[42.375rem]"
             viewBox="0 0 1155 550"
@@ -168,7 +175,12 @@ export default function RootLayout({
               <div className="flex justify-start lg:w-0 lg:flex-1">
                 <a href="/">
                   <span className="sr-only">Winston</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#4f46e5" className="h-8 w-auto">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="#4f46e5"
+                    className="h-8 w-auto"
+                  >
                     <path d="M11.7 2.805a.75.75 0 01.6 0A60.65 60.65 0 0122.83 8.72a.75.75 0 01-.231 1.337 49.949 49.949 0 00-9.902 3.912l-.003.002-.34.18a.75.75 0 01-.707 0A50.009 50.009 0 007.5 12.174v-.224c0-.131.067-.248.172-.311a54.614 54.614 0 014.653-2.52.75.75 0 00-.65-1.352 56.129 56.129 0 00-4.78 2.589 1.858 1.858 0 00-.859 1.228 49.803 49.803 0 00-4.634-1.527.75.75 0 01-.231-1.337A60.653 60.653 0 0111.7 2.805z" />
                     <path d="M13.06 15.473a48.45 48.45 0 017.666-3.282c.134 1.414.22 2.843.255 4.285a.75.75 0 01-.46.71 47.878 47.878 0 00-8.105 4.342.75.75 0 01-.832 0 47.877 47.877 0 00-8.104-4.342.75.75 0 01-.461-.71c.035-1.442.121-2.87.255-4.286A48.4 48.4 0 016 13.18v1.27a1.5 1.5 0 00-.14 2.508c-.09.38-.222.753-.397 1.11.452.213.901.434 1.346.661a6.729 6.729 0 00.551-1.608 1.5 1.5 0 00.14-2.67v-.645a48.549 48.549 0 013.44 1.668 2.25 2.25 0 002.12 0z" />
                     <path d="M4.462 19.462c.42-.419.753-.89 1-1.394.453.213.902.434 1.347.661a6.743 6.743 0 01-1.286 1.794.75.75 0 11-1.06-1.06z" />
@@ -187,15 +199,15 @@ export default function RootLayout({
                     <>
                       <Popover.Button
                         className={classNames(
-                          open ? 'text-gray-900' : 'text-gray-500',
-                          'group inline-flex items-center rounded-md bg-transparent text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2'
+                          open ? "text-gray-900" : "text-gray-500",
+                          "group inline-flex items-center rounded-md bg-transparent text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                         )}
                       >
                         <span>Tools</span>
                         <ChevronDownIcon
                           className={classNames(
-                            open ? 'text-gray-600' : 'text-gray-400',
-                            'ml-2 h-5 w-5 group-hover:text-gray-500'
+                            open ? "text-gray-600" : "text-gray-400",
+                            "ml-2 h-5 w-5 group-hover:text-gray-500"
                           )}
                           aria-hidden="true"
                         />
@@ -219,10 +231,17 @@ export default function RootLayout({
                                   href={item.href}
                                   className="-m-3 flex items-start rounded-lg p-3 hover:bg-gray-50"
                                 >
-                                  <item.icon className="h-6 w-6 flex-shrink-0 text-indigo-600" aria-hidden="true" />
+                                  <item.icon
+                                    className="h-6 w-6 flex-shrink-0 text-indigo-600"
+                                    aria-hidden="true"
+                                  />
                                   <div className="ml-4">
-                                    <p className="text-base font-medium text-gray-900">{item.name}</p>
-                                    <p className="mt-1 text-sm text-gray-500">{item.description}</p>
+                                    <p className="text-base font-medium text-gray-900">
+                                      {item.name}
+                                    </p>
+                                    <p className="mt-1 text-sm text-gray-500">
+                                      {item.description}
+                                    </p>
                                   </div>
                                 </a>
                               ))}
@@ -234,7 +253,10 @@ export default function RootLayout({
                                     href={item.href}
                                     className="-m-3 flex items-center rounded-md p-3 text-base font-medium text-gray-900 hover:bg-gray-100"
                                   >
-                                    <item.icon className="h-6 w-6 flex-shrink-0 text-gray-400" aria-hidden="true" />
+                                    <item.icon
+                                      className="h-6 w-6 flex-shrink-0 text-gray-400"
+                                      aria-hidden="true"
+                                    />
                                     <span className="ml-3">{item.name}</span>
                                   </a>
                                 </div>
@@ -247,21 +269,36 @@ export default function RootLayout({
                   )}
                 </Popover>
 
-                <a href="/contact" className="text-base font-medium text-gray-500 hover:text-gray-900">
+                <a
+                  href="/contact"
+                  className="text-base font-medium text-gray-500 hover:text-gray-900"
+                >
                   Contact
                 </a>
-                <a href="/about-us" className="text-base font-medium text-gray-500 hover:text-gray-900">
+                <a
+                  href="/about-us"
+                  className="text-base font-medium text-gray-500 hover:text-gray-900"
+                >
                   About Us
                 </a>
-                <a href="/pricing" className="text-base font-medium text-gray-500 hover:text-gray-900">
+                <a
+                  href="/pricing"
+                  className="text-base font-medium text-gray-500 hover:text-gray-900"
+                >
                   Pricing
                 </a>
-                <a href="/learn-more" className="text-base font-medium text-gray-500 hover:text-gray-900">
+                <a
+                  href="/learn-more"
+                  className="text-base font-medium text-gray-500 hover:text-gray-900"
+                >
                   Learn More
                 </a>
               </Popover.Group>
               <div className="hidden items-center justify-end md:flex md:flex-1 lg:w-0">
-                <a href="/sign-in" className="whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900">
+                <a
+                  href="/sign-in"
+                  className="whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900"
+                >
                   Sign in
                 </a>
                 <a
@@ -283,12 +320,20 @@ export default function RootLayout({
             leaveFrom="opacity-100 scale-100"
             leaveTo="opacity-0 scale-95"
           >
-            <Popover.Panel focus className="absolute inset-x-0 top-0 origin-top-right transform p-2 transition md:hidden">
+            <Popover.Panel
+              focus
+              className="absolute inset-x-0 top-0 origin-top-right transform p-2 transition md:hidden"
+            >
               <div className="divide-y-2 divide-gray-50 rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5">
                 <div className="px-5 pt-5 pb-6">
                   <div className="flex items-center justify-between">
                     <div>
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#4f46e5" className="h-8 w-auto">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="#4f46e5"
+                        className="h-8 w-auto"
+                      >
                         <path d="M11.7 2.805a.75.75 0 01.6 0A60.65 60.65 0 0122.83 8.72a.75.75 0 01-.231 1.337 49.949 49.949 0 00-9.902 3.912l-.003.002-.34.18a.75.75 0 01-.707 0A50.009 50.009 0 007.5 12.174v-.224c0-.131.067-.248.172-.311a54.614 54.614 0 014.653-2.52.75.75 0 00-.65-1.352 56.129 56.129 0 00-4.78 2.589 1.858 1.858 0 00-.859 1.228 49.803 49.803 0 00-4.634-1.527.75.75 0 01-.231-1.337A60.653 60.653 0 0111.7 2.805z" />
                         <path d="M13.06 15.473a48.45 48.45 0 017.666-3.282c.134 1.414.22 2.843.255 4.285a.75.75 0 01-.46.71 47.878 47.878 0 00-8.105 4.342.75.75 0 01-.832 0 47.877 47.877 0 00-8.104-4.342.75.75 0 01-.461-.71c.035-1.442.121-2.87.255-4.286A48.4 48.4 0 016 13.18v1.27a1.5 1.5 0 00-.14 2.508c-.09.38-.222.753-.397 1.11.452.213.901.434 1.346.661a6.729 6.729 0 00.551-1.608 1.5 1.5 0 00.14-2.67v-.645a48.549 48.549 0 013.44 1.668 2.25 2.25 0 002.12 0z" />
                         <path d="M4.462 19.462c.42-.419.753-.89 1-1.394.453.213.902.434 1.347.661a6.743 6.743 0 01-1.286 1.794.75.75 0 11-1.06-1.06z" />
@@ -309,8 +354,13 @@ export default function RootLayout({
                           href={item.href}
                           className="-m-3 flex items-center rounded-md p-3 hover:bg-gray-50"
                         >
-                          <item.icon className="h-6 w-6 flex-shrink-0 text-indigo-600" aria-hidden="true" />
-                          <span className="ml-3 text-base font-medium text-gray-900">{item.name}</span>
+                          <item.icon
+                            className="h-6 w-6 flex-shrink-0 text-indigo-600"
+                            aria-hidden="true"
+                          />
+                          <span className="ml-3 text-base font-medium text-gray-900">
+                            {item.name}
+                          </span>
                         </a>
                       ))}
                     </nav>
@@ -318,27 +368,40 @@ export default function RootLayout({
                 </div>
                 <div className="space-y-6 py-6 px-5">
                   <div className="grid grid-cols-2 gap-y-4 gap-x-8">
-                    <a href="/pricing" className="text-base font-medium text-gray-900 hover:text-gray-700">
+                    <a
+                      href="/pricing"
+                      className="text-base font-medium text-gray-900 hover:text-gray-700"
+                    >
                       Pricing
                     </a>
 
-                    <a href="/contact" className="text-base font-medium text-gray-900 hover:text-gray-700">
+                    <a
+                      href="/contact"
+                      className="text-base font-medium text-gray-900 hover:text-gray-700"
+                    >
                       Contact Us
                     </a>
-                    
-                    <a href="/" className="text-base font-medium text-gray-900 hover:text-gray-700">
+
+                    <a
+                      href="/"
+                      className="text-base font-medium text-gray-900 hover:text-gray-700"
+                    >
                       Learn More
                     </a>
                   </div>
                   <div>
                     <a
                       href="/"
-                      className="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700">
+                      className="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
+                    >
                       Sign up
                     </a>
                     <p className="mt-6 text-center text-base font-medium text-gray-500">
-                      Existing customer?{' '}
-                      <a href="/" className="text-indigo-600 hover:text-indigo-500">
+                      Existing customer?{" "}
+                      <a
+                        href="/"
+                        className="text-indigo-600 hover:text-indigo-500"
+                      >
                         Sign in
                       </a>
                     </p>
@@ -349,42 +412,46 @@ export default function RootLayout({
           </Transition>
         </Popover>
 
-        <div className="z-10">
-          {children}
-        </div>
+        <div className="z-10">{children}</div>
         <div className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]">
-            <svg
-              className="relative left-[calc(50%+3rem)] h-[21.1875rem] max-w-none -translate-x-1/2 sm:left-[calc(50%+36rem)] sm:h-[42.375rem]"
-              viewBox="0 0 1155 678"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fill="url(#ecb5b0c9-546c-4772-8c71-4d3f06d544bc)"
-                fillOpacity=".3"
-                d="M317.219 518.975L203.852 678 0 438.341l317.219 80.634 204.172-286.402c1.307 132.337 45.083 346.658 209.733 145.248C936.936 126.058 882.053-94.234 1031.02 41.331c119.18 108.451 130.68 295.337 121.53 375.223L855 299l21.173 362.054-558.954-142.079z"
-              />
-              <defs>
-                <linearGradient
-                  id="ecb5b0c9-546c-4772-8c71-4d3f06d544bc"
-                  x1="1155.49"
-                  x2="-78.208"
-                  y1=".177"
-                  y2="474.645"
-                  gradientUnits="userSpaceOnUse"
-                >
-                  <stop stopColor="#9089FC" />
-                  <stop offset={1} stopColor="#FF80B5" />
-                </linearGradient>
-              </defs>
-            </svg>
-          </div>
+          <svg
+            className="relative left-[calc(50%+3rem)] h-[21.1875rem] max-w-none -translate-x-1/2 sm:left-[calc(50%+36rem)] sm:h-[42.375rem]"
+            viewBox="0 0 1155 678"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill="url(#ecb5b0c9-546c-4772-8c71-4d3f06d544bc)"
+              fillOpacity=".3"
+              d="M317.219 518.975L203.852 678 0 438.341l317.219 80.634 204.172-286.402c1.307 132.337 45.083 346.658 209.733 145.248C936.936 126.058 882.053-94.234 1031.02 41.331c119.18 108.451 130.68 295.337 121.53 375.223L855 299l21.173 362.054-558.954-142.079z"
+            />
+            <defs>
+              <linearGradient
+                id="ecb5b0c9-546c-4772-8c71-4d3f06d544bc"
+                x1="1155.49"
+                x2="-78.208"
+                y1=".177"
+                y2="474.645"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop stopColor="#9089FC" />
+                <stop offset={1} stopColor="#FF80B5" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
         <footer className="bg-transparent backdrop-blur-3x relative bottom-0 w-full">
           <div className="mx-auto max-w-7xl overflow-hidden py-12 px-4 sm:px-6 lg:px-8">
-            <nav className="-mx-5 -my-2 flex flex-wrap justify-center" aria-label="Footer">
+            <nav
+              className="-mx-5 -my-2 flex flex-wrap justify-center"
+              aria-label="Footer"
+            >
               {navigation.main.map((item) => (
                 <div key={item.name} className="px-5 py-2">
-                  <a href={item.href} className="text-base text-gray-500 hover:text-gray-900">
+                  <a
+                    href={item.href}
+                    className="text-base text-gray-500 hover:text-gray-900"
+                  >
                     {item.name}
                   </a>
                 </div>
@@ -392,13 +459,19 @@ export default function RootLayout({
             </nav>
             <div className="mt-8 flex justify-center space-x-6">
               {navigation.social.map((item) => (
-                <a key={item.name} href={item.href} className="text-gray-400 hover:text-gray-500">
+                <a
+                  key={item.name}
+                  href={item.href}
+                  className="text-gray-400 hover:text-gray-500"
+                >
                   <span className="sr-only">{item.name}</span>
                   <item.icon className="h-6 w-6" aria-hidden="true" />
                 </a>
               ))}
             </div>
-            <p className="mt-8 text-center text-base text-gray-400">&copy; 2022 Winston Edu, Inc. All rights reserved.</p>
+            <p className="mt-8 text-center text-base text-gray-400">
+              &copy; 2022 Winston Edu, Inc. All rights reserved.
+            </p>
           </div>
         </footer>
       </body>
